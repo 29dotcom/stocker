@@ -62,19 +62,31 @@ require __DIR__ . '/../src/partials/header.php';
         <div class="stack-grid">
             <div class="stack-card">
                 <p class="role">Backend</p>
-                <div><p class="value">PHP 8.x</p><p class="note">Logica di business</p></div>
+                <div>
+                    <p class="value">PHP 8.x</p>
+                    <p class="note">Logica di business</p>
+                </div>
             </div>
             <div class="stack-card">
                 <p class="role">Database</p>
-                <div><p class="value">MySQL 8.0</p><p class="note">RDBMS relazionale</p></div>
+                <div>
+                    <p class="value">MySQL 8.0</p>
+                    <p class="note">RDBMS relazionale</p>
+                </div>
             </div>
             <div class="stack-card">
                 <p class="role">Frontend</p>
-                <div><p class="value">HTML5 &amp; CSS3</p><p class="note">Interfaccia utente</p></div>
+                <div>
+                    <p class="value">HTML5 &amp; CSS3</p>
+                    <p class="note">Interfaccia utente</p>
+                </div>
             </div>
             <div class="stack-card">
                 <p class="role">Server</p>
-                <div><p class="value">XAMPP (Apache)</p><p class="note">Ambiente di hosting</p></div>
+                <div>
+                    <p class="value">XAMPP (Apache)</p>
+                    <p class="note">Ambiente di hosting</p>
+                </div>
             </div>
         </div>
     </section>
@@ -131,8 +143,7 @@ require __DIR__ . '/../src/partials/header.php';
         <h2>Scarica qua<br>il codice latex<br>della documentazione<br>tecnica</h2>
         <p>Documentazione tecnica del sistema integrato &amp;Stocker.<br>Consiglio, Folli, Garavino.</p>
         <div class="actions">
-            <a href="catalogo.php" class="btn btn-primary">Prova ordini dinamici</a>
-            <a href="admin.php" class="btn">Pannello admin</a>
+            <a href="../README.tex" download="README.tex" class="btn gold" style="white-space:nowrap; border-radius:0; text-decoration:none;">SCARICA LATEX</a>
         </div>
     </section>
 
