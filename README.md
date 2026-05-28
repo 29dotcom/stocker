@@ -1,3 +1,33 @@
+<div align="center">
+
+# &Stocker
+### Sistema Full-Stack per la Gestione Logistica, di Magazzino ed E-commerce
+
+**Esame di Stato del Secondo Ciclo di Istruzione**
+*Indirizzo: Informatica e Telecomunicazioni — Anno Scolastico 2025/2026*
+*Classe V AIF — LAVORO 3*
+
+---
+
+![PHP](https://img.shields.io/badge/PHP-8.x-777BB4?style=flat-square&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=flat-square&logo=mysql&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![XAMPP](https://img.shields.io/badge/XAMPP-FB7A24?style=flat-square&logo=xampp&logoColor=white)
+
+</div>
+
+---
+
+## Abstract
+
+Il progetto **&Stocker** è un sistema full-stack per la gestione della logistica di magazzino integrata con un portale e-commerce, sviluppato nell'ambito del LAVORO 3 . Seguendo la traccia  «Gestore Magazzino e Logistica per E-commerce», l'applicazione implementa un backend completo per il controllo di scorte, fornitori e ordini, esponendo le funzionalità attraverso un'interfaccia web dinamica.
+
+Il cuore del sistema è un database relazionale normalizzato in **Terza Forma Normale (3FN)** con tabelle per Prodotti, Categorie, Fornitori, Ordini e Dettaglio_Ordini. L'automazione delle scorte di magazzino è delegata a un **Trigger MySQL** che aggiorna automaticamente le quantità disponibili all'inserimento di ogni nuovo ordine. La reportistica avanzata sfrutta query aggregate con `GROUP BY` e `JOIN` complesse per generare statistiche di vendita mensili. Sul lato PHP, il sistema gestisce sessioni utente con ruoli differenziati (Admin vs User), implementa tutte le operazioni CRUD tramite PDO Prepared Statements e offre una navigazione fluida tra catalogo, area personale e pannello amministrativo.
+
+---
+
+
 # &Stocker — Versione PHP / XAMPP
 
 Implementazione PHP 8 + MySQL 8 + HTML5 + CSS3 del progetto &Stocker, fedele alla struttura del README originale (LAVORO 3). Tutta la logica utilizza **PDO Prepared Statements**, sessioni PHP, **password_hash()** BCrypt e un **trigger MySQL** `AFTER INSERT` su `dettaglio_ordini` per il decremento automatico dello stock.
