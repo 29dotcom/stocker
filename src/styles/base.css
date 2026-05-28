@@ -1,0 +1,236 @@
+/* =====================================================
+   &Stocker - base.css
+   Reset, variabili, tipografia, navbar e componenti UI.
+===================================================== */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --accent: #C8A97E;
+    --accent-dark: #9C7A50;
+    --white: #F5F2ED;
+    --black: #080808;
+    --gray-light: #888;
+    --gray-mid: #333;
+    --gray-dark: #1a1a1a;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    min-height: 100vh;
+}
+
+a { color: inherit; text-decoration: none; }
+
+h1, h2, h3, .logo, .btn, .product-format, .product-category, .product-stock {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* ─── NAVBAR ─── */
+.navbar {
+    position: fixed; top: 0; width: 100%; padding: 25px 60px;
+    display: flex; align-items: center; z-index: 100;
+    backdrop-filter: blur(12px);
+    background: rgba(8,8,8,0.55);
+    border-bottom: 1px solid rgba(200,169,126,0.12);
+    transition: background 0.5s;
+}
+
+.logo {
+    font-size: 22px; font-weight: 700; letter-spacing: 5px;
+    color: var(--white); margin-right: 60px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.logo span { color: var(--accent); }
+
+.navbar nav ul {
+    display: flex; list-style: none; gap: 30px;
+}
+
+.navbar nav ul li a {
+    color: var(--white); font-size: 11px; letter-spacing: 3px;
+    font-weight: 400; opacity: 0.6;
+    transition: opacity 0.3s, color 0.3s;
+    font-family: 'Oswald', sans-serif; text-transform: uppercase;
+}
+
+.navbar nav ul li a:hover,
+.navbar nav ul li a.active { opacity: 1; color: var(--accent); }
+
+.nav-right {
+    margin-left: auto; display: flex; align-items: center; gap: 20px;
+}
+
+.nav-user {
+    font-size: 12px; color: var(--gray-light);
+}
+
+.nav-cart, .nav-logout {
+    font-size: 11px; letter-spacing: 3px;
+    border: 1px solid rgba(200,169,126,0.5);
+    padding: 9px 18px; cursor: pointer;
+    color: var(--accent); transition: 0.3s;
+    font-family: 'Oswald', sans-serif; text-transform: uppercase;
+}
+
+.nav-cart:hover, .nav-logout:hover {
+    background: var(--accent); color: var(--black);
+}
+
+/* ─── BOTTONI ─── */
+.btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 12px 22px; font-size: 11px; letter-spacing: 3px;
+    border: 1px solid rgba(200,169,126,0.5);
+    background: transparent; color: var(--accent); cursor: pointer;
+    transition: 0.3s; font-family: 'Oswald', sans-serif;
+}
+
+.btn:hover { background: var(--accent); color: var(--black); }
+
+.btn-primary { background: var(--accent); color: var(--black); border-color: var(--accent); }
+.btn-primary:hover { background: var(--white); border-color: var(--white); color: var(--black); }
+
+.btn-ghost { background: transparent; }
+
+.btn-danger { border-color: rgba(220,100,100,0.55); color: #f5b1b1; }
+.btn-danger:hover { background: rgba(220,100,100,0.85); color: var(--black); }
+
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.inline-form { display: inline-flex; }
+
+/* ─── FLASH MESSAGES ─── */
+.flash-stack {
+    position: fixed; top: 100px; right: 30px; z-index: 200;
+    display: flex; flex-direction: column; gap: 10px;
+    max-width: 360px;
+}
+
+.flash {
+    padding: 14px 18px; background: rgba(20,20,20,0.95);
+    border-left: 3px solid var(--accent);
+    color: var(--white); font-size: 13px; line-height: 1.5;
+    animation: flashIn 0.4s ease-out;
+}
+
+.flash--success { border-left-color: #6ec48a; }
+.flash--warning { border-left-color: #e3b34d; }
+.flash--error   { border-left-color: #e36a6a; }
+
+@keyframes flashIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ─── FOOTER ─── */
+.site-footer {
+    background: var(--gray-dark); padding: 60px 60px;
+    border-top: 1px solid rgba(200,169,126,0.12);
+    margin-top: 80px;
+}
+
+.footer-inner {
+    max-width: 1200px; margin: 0 auto; text-align: center;
+    display: flex; flex-direction: column; gap: 16px;
+}
+
+.footer-inner .logo { margin: 0 auto; }
+.footer-inner p { color: var(--gray-light); font-size: 13px; }
+.footer-links a { color: var(--accent); margin: 0 6px; letter-spacing: 2px; font-size: 11px; text-transform: uppercase; font-family: 'Oswald', sans-serif; }
+.footer-links a:hover { color: var(--white); }
+
+/* ─── FORMS ─── */
+.field { display: flex; flex-direction: column; margin-bottom: 16px; }
+
+.field label, .stocker-label {
+    font-family: 'Oswald', sans-serif; font-size: 10px; font-weight: 300;
+    letter-spacing: 4px; text-transform: uppercase;
+    color: var(--gray-light); margin-bottom: 8px;
+}
+
+.input, select.input, textarea.input {
+    width: 100%; background: transparent;
+    border: 1px solid rgba(200,169,126,0.25);
+    color: var(--white); font-family: 'Barlow', sans-serif;
+    font-size: 14px; padding: 14px 18px;
+    outline: none; transition: border-color 0.3s, background 0.3s;
+}
+
+.input:focus, select.input:focus, textarea.input:focus {
+    border-color: var(--accent); background: rgba(200,169,126,0.04);
+}
+
+textarea.input { min-height: 120px; resize: vertical; }
+
+select.input option { background: #141414; color: var(--white); }
+
+.field-row {
+    display: grid; gap: 16px;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* ─── CONTAINER GENERICO ─── */
+.page-content {
+    padding: 140px 7vw 80px;
+    min-height: calc(100vh - 200px);
+}
+
+.page-title-block { margin-bottom: 40px; }
+
+.page-title-block .eyebrow {
+    font-family: 'Oswald', sans-serif; font-size: 11px;
+    letter-spacing: 5px; color: var(--accent);
+    text-transform: uppercase;
+}
+
+.page-title-block h1 {
+    font-family: 'Oswald', sans-serif; font-size: clamp(2.4rem, 6vw, 5rem);
+    font-weight: 500; letter-spacing: 4px; margin-top: 14px;
+    line-height: 1.05;
+}
+
+.page-title-block p {
+    margin-top: 18px; color: var(--gray-light);
+    max-width: 720px; font-size: 16px; line-height: 1.7;
+}
+
+.divider { width: 40px; height: 1px; background: var(--accent); margin: 14px 0 28px; }
+
+/* ─── CARD GENERICA ─── */
+.card {
+    background: #111; border: 1px solid rgba(200,169,126,0.12);
+    padding: 28px;
+}
+
+.card h2 {
+    font-family: 'Oswald', sans-serif; font-size: 22px;
+    font-weight: 500; letter-spacing: 3px; text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+/* ─── TABELLE ─── */
+.table {
+    width: 100%; border-collapse: collapse; margin-top: 18px;
+}
+
+.table th, .table td {
+    padding: 14px 12px; text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-size: 14px;
+}
+
+.table th {
+    font-family: 'Oswald', sans-serif; font-size: 11px;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gray-light); font-weight: 300;
+}
+
+.table tr:hover td { background: rgba(200,169,126,0.04); }

@@ -1,0 +1,180 @@
+/* =====================================================
+   Catalog - filtri, griglia prodotti, scheda prodotto
+===================================================== */
+
+.catalog-filters {
+    display: grid; gap: 18px;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 24px 0; margin-bottom: 40px;
+    border-top: 1px solid rgba(200,169,126,0.15);
+    border-bottom: 1px solid rgba(200,169,126,0.15);
+}
+
+.catalog-filters .field { margin: 0; }
+
+@media (max-width: 800px) {
+    .catalog-filters { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+    .catalog-filters { grid-template-columns: 1fr; }
+}
+
+.product-grid {
+    display: grid; gap: 18px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.product-card {
+    background: var(--gray-dark);
+    border: 1px solid rgba(255,255,255,0.05);
+    display: flex; flex-direction: column;
+    overflow: hidden; transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(200,169,126,0.3);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+}
+
+.product-media {
+    position: relative; display: block; height: 240px; overflow: hidden;
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+}
+
+.product-media img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-media img { transform: scale(1.05); }
+
+.product-format {
+    position: absolute; top: 14px; left: 14px;
+    background: var(--accent); color: var(--black);
+    padding: 5px 12px; font-size: 9px; letter-spacing: 3px;
+    font-family: 'Oswald', sans-serif; text-transform: uppercase;
+}
+
+.product-body { display: flex; flex-direction: column; padding: 20px 22px; flex: 1; }
+
+.product-category {
+    font-size: 10px; letter-spacing: 2px; color: var(--gray-light);
+    text-transform: uppercase; font-family: 'Oswald', sans-serif;
+}
+
+.product-name {
+    font-family: 'Oswald', sans-serif; font-size: 18px;
+    font-weight: 500; letter-spacing: 2px; margin-top: 10px;
+    text-transform: uppercase; line-height: 1.3;
+}
+
+.product-name a { color: var(--white); }
+.product-card:hover .product-name a { color: var(--accent); }
+
+.product-brand { font-size: 12px; color: var(--gray-light); margin-top: 4px; }
+
+.product-desc { margin-top: 14px; font-size: 13px; color: rgba(245,242,237,0.6); line-height: 1.6; flex: 1; }
+
+.product-footer {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-top: 18px; padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.08); gap: 16px;
+}
+
+.product-price {
+    font-family: 'Oswald', sans-serif; font-size: 20px;
+    color: var(--accent); letter-spacing: 2px;
+}
+
+.product-stock { font-size: 11px; margin-top: 4px; letter-spacing: 2px; }
+.product-stock.is-ok  { color: #6ec48a; }
+.product-stock.is-low { color: var(--accent); }
+.product-stock.is-out { color: #e36a6a; }
+
+/* ─── DETTAGLIO ─── */
+.product-detail {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 50px;
+    margin-top: 30px;
+}
+
+.product-detail .gallery {
+    background: var(--gray-dark); padding: 30px;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 480px;
+}
+
+.product-detail .gallery img { max-width: 100%; max-height: 480px; object-fit: contain; }
+
+.product-detail .info h1 {
+    font-family: 'Oswald', sans-serif; font-size: clamp(2rem, 4vw, 3.4rem);
+    font-weight: 500; letter-spacing: 4px; margin-top: 12px; line-height: 1.05;
+    text-transform: uppercase;
+}
+
+.product-detail .info .meta { margin-top: 14px; color: var(--gray-light); font-size: 14px; }
+
+.product-detail .info .desc { margin-top: 24px; line-height: 1.8; color: rgba(245,242,237,0.75); }
+
+.product-detail .specs {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+    margin-top: 30px; background: rgba(255,255,255,0.08);
+}
+
+.product-detail .specs div {
+    background: #161616; padding: 14px 18px;
+}
+
+.product-detail .specs dt {
+    font-family: 'Oswald', sans-serif; font-size: 10px; letter-spacing: 3px;
+    color: var(--gray-light); text-transform: uppercase;
+}
+
+.product-detail .specs dd { margin-top: 6px; font-size: 14px; }
+
+.product-detail .add-row {
+    margin-top: 30px; display: flex; gap: 14px; align-items: flex-end;
+    padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.product-detail .add-row .qty { width: 110px; }
+
+@media (max-width: 800px) {
+    .product-detail { grid-template-columns: 1fr; }
+    .product-detail .specs { grid-template-columns: 1fr; }
+}
+
+/* ─── CARRELLO ─── */
+.cart-layout {
+    display: grid; grid-template-columns: 1.4fr 0.7fr; gap: 30px; margin-top: 20px;
+}
+
+@media (max-width: 900px) { .cart-layout { grid-template-columns: 1fr; } }
+
+.cart-line {
+    display: grid; grid-template-columns: 110px 1fr auto;
+    gap: 22px; padding: 18px; margin-bottom: 14px;
+    border: 1px solid rgba(255,255,255,0.08); background: #111;
+}
+
+.cart-line img { width: 110px; height: 110px; object-fit: cover; }
+
+.cart-line .name { font-family: 'Oswald', sans-serif; font-size: 16px; letter-spacing: 2px; text-transform: uppercase; }
+.cart-line .brand { color: var(--gray-light); font-size: 12px; margin-top: 4px; }
+
+.cart-line .actions { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+
+.cart-line .price { font-family: 'Oswald', sans-serif; font-size: 16px; color: var(--accent); }
+
+.cart-line input.qty { width: 90px; }
+
+.cart-summary { background: #111; padding: 28px; border: 1px solid rgba(200,169,126,0.15); height: fit-content; }
+.cart-summary .row { display: flex; justify-content: space-between; padding: 10px 0; color: var(--gray-light); }
+.cart-summary .row.total { color: var(--accent); font-size: 20px; font-family: 'Oswald', sans-serif; letter-spacing: 2px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 16px; margin-top: 10px; }
+.cart-summary .btn { width: 100%; margin-top: 18px; }
+
+.empty-state {
+    border: 1px solid rgba(200,169,126,0.2); padding: 50px;
+    text-align: center; color: var(--gray-light); margin: 30px 0;
+}

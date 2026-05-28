@@ -1,0 +1,246 @@
+/* =====================================================
+   HomePage - sezioni "slide" del README originale
+===================================================== */
+
+.slide {
+    min-height: 100vh; width: 100%;
+    display: flex; align-items: center;
+    padding: 0 10%; position: relative; overflow: hidden;
+}
+
+/* ─── HERO ─── */
+#hero {
+    background-image:
+        linear-gradient(105deg, rgba(8,8,8,0.85) 40%, rgba(8,8,8,0.3) 100%),
+        url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover; background-position: center;
+    padding-top: 100px;
+}
+
+#hero::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 100%; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.hero-content { max-width: 880px; }
+
+.hero-eyebrow {
+    font-family: 'Oswald', sans-serif; font-size: 11px;
+    letter-spacing: 5px; color: var(--accent);
+    text-transform: uppercase;
+}
+
+.hero-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(3rem, 10vw, 9rem);
+    font-weight: 700; line-height: 0.9; letter-spacing: 0.05em;
+    margin-top: 24px; text-transform: uppercase;
+}
+
+.hero-title em { color: var(--accent); font-style: normal; font-weight: 200; }
+.hero-title .brand-mark { color: var(--accent); display: block; }
+
+.hero-sub {
+    margin-top: 30px; max-width: 580px;
+    font-size: 18px; line-height: 1.7; color: rgba(245,242,237,0.75);
+}
+
+.hero-actions { margin-top: 40px; display: flex; gap: 14px; flex-wrap: wrap; }
+
+.hero-counter {
+    position: absolute; right: 10%; bottom: 80px;
+    font-size: 11px; letter-spacing: 4px; color: var(--gray-light);
+    writing-mode: vertical-rl; font-family: 'Oswald', sans-serif;
+}
+
+/* ─── SLIDE 2: ABSTRACT ─── */
+#abstract {
+    background-color: var(--gray-dark);
+    display: grid; grid-template-columns: 1fr 1fr;
+    padding: 0; gap: 0;
+}
+
+.abstract-visual {
+    background-image:
+        linear-gradient(105deg, rgba(8,8,8,0.85) 40%, rgba(8,8,8,0.3) 100%),
+        url('https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=1200&auto=format&fit=crop');
+    background-size: cover; background-position: center;
+    position: relative; min-height: 50vh;
+}
+
+.abstract-tag {
+    position: absolute; bottom: 60px; left: 50px;
+    font-size: 11px; letter-spacing: 3px; color: var(--white);
+    border-left: 2px solid var(--accent); padding-left: 15px;
+    font-family: 'Oswald', sans-serif; text-transform: uppercase;
+}
+
+.abstract-content {
+    display: flex; flex-direction: column;
+    justify-content: center; padding: 80px 70px;
+}
+
+.abstract-content .eyebrow {
+    font-family: 'Oswald', sans-serif; font-size: 11px;
+    letter-spacing: 5px; color: var(--accent); text-transform: uppercase;
+}
+
+.abstract-content h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    font-weight: 500; line-height: 1.05; letter-spacing: 4px;
+    margin-top: 16px; text-transform: uppercase;
+}
+
+.abstract-content p {
+    margin-top: 24px; color: var(--gray-light);
+    font-size: 16px; line-height: 1.8; max-width: 540px;
+}
+
+.abstract-list { margin-top: 38px; border-top: 1px solid rgba(255,255,255,0.1); }
+.abstract-list li {
+    list-style: none; display: flex; gap: 30px;
+    padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-family: 'Oswald', sans-serif; font-size: 13px; letter-spacing: 3px;
+}
+.abstract-list li span:first-child { color: var(--accent); }
+
+/* ─── SLIDE 3: STACK ─── */
+#stack {
+    background-color: var(--black);
+    flex-direction: column; justify-content: center;
+    align-items: flex-start; padding-top: 120px;
+}
+
+.section-header {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    width: 100%; margin-bottom: 50px; flex-wrap: wrap; gap: 20px;
+}
+
+.section-header h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 4.5rem);
+    font-weight: 500; letter-spacing: 4px; text-transform: uppercase;
+    line-height: 1; margin-top: 14px;
+}
+
+.stack-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 2px; width: 100%; background: rgba(200,169,126,0.15);
+}
+
+.stack-card {
+    background: var(--gray-dark); padding: 40px 35px;
+    min-height: 300px; display: flex; flex-direction: column; justify-content: space-between;
+    transition: background 0.4s;
+}
+
+.stack-card:hover { background: rgba(200,169,126,0.08); }
+
+.stack-card .role { font-family: 'Oswald', sans-serif; font-size: 13px; letter-spacing: 3px; color: var(--accent); text-transform: uppercase; }
+.stack-card .value { font-family: 'Oswald', sans-serif; font-size: 30px; font-weight: 200; letter-spacing: 3px; margin-top: 80px; }
+.stack-card .note { font-size: 13px; color: var(--gray-light); margin-top: 10px; }
+
+/* ─── SLIDE 4: SPECIFICHE ─── */
+#specifiche {
+    background-image:
+        linear-gradient(rgba(8,8,8,0.78), rgba(8,8,8,0.78)),
+        url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover; background-position: center;
+    flex-direction: column; justify-content: center; align-items: flex-start;
+}
+
+.features-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: rgba(200,169,126,0.15);
+    margin-top: 50px; width: 100%;
+}
+
+.feature-card {
+    background: rgba(8,8,8,0.6); padding: 40px 35px;
+    backdrop-filter: blur(5px);
+}
+
+.feature-code { font-family: 'Oswald', sans-serif; font-size: 50px; font-weight: 200; color: var(--accent); }
+.feature-card h3 { font-family: 'Oswald', sans-serif; font-size: 18px; letter-spacing: 3px; margin-top: 12px; text-transform: uppercase; }
+.feature-card p  { margin-top: 14px; color: var(--gray-light); font-size: 14px; line-height: 1.8; }
+
+/* ─── SLIDE 5: RUOLI ─── */
+#ruoli {
+    background-color: var(--gray-dark);
+    display: grid; grid-template-columns: 1fr 1fr;
+    padding: 100px 10% 100px;
+    gap: 60px;
+}
+
+.roles-list {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 30px;
+}
+
+.roles-list .item {
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 22px 0; display: flex; gap: 22px; align-items: center;
+}
+
+.roles-list .item .symbol {
+    color: var(--gray-light); font-size: 22px; min-width: 22px;
+}
+
+.roles-list .item .name {
+    font-family: 'Oswald', sans-serif; font-size: 14px;
+    letter-spacing: 2px; text-transform: uppercase; font-weight: 300;
+}
+
+.roles-list .item .desc { margin-left: auto; color: var(--gray-light); font-size: 12px; text-align: right; }
+
+.roles-visual {
+    background-image:
+        linear-gradient(rgba(8,8,8,0.4), rgba(8,8,8,0.78)),
+        url('https://images.unsplash.com/photo-1523381294911-8d3cead13475?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover; background-position: center;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 50px;
+}
+
+.roles-visual p {
+    font-family: 'Oswald', sans-serif; font-size: 32px;
+    font-weight: 300; letter-spacing: 3px; line-height: 1.2;
+    text-transform: uppercase;
+}
+
+/* ─── SLIDE 6: CTA ─── */
+#cta {
+    background-color: var(--black);
+    flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; position: relative;
+}
+
+#cta::before {
+    content: '&STOCKER';
+    position: absolute; bottom: -100px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 28vw; font-weight: 700; color: rgba(255,255,255,0.025);
+    pointer-events: none; line-height: 1;
+}
+
+#cta h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2.4rem, 5vw, 4.8rem);
+    font-weight: 500; letter-spacing: 4px; line-height: 1.1;
+    text-transform: uppercase;
+}
+
+#cta p { margin-top: 24px; color: var(--gray-light); max-width: 540px; font-size: 16px; line-height: 1.8; }
+
+#cta .actions { margin-top: 38px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 960px) {
+    #abstract, #ruoli { grid-template-columns: 1fr; }
+    .stack-grid { grid-template-columns: 1fr 1fr; }
+    .features-grid { grid-template-columns: 1fr; }
+    .navbar { padding: 18px 20px; flex-wrap: wrap; }
+    .logo { margin-right: 20px; }
+}

@@ -1,0 +1,80 @@
+/* =====================================================
+   Auth - Login & Register
+===================================================== */
+
+body.page-login,
+body.page-register {
+    background-attachment: fixed;
+    background-size: cover; background-position: center;
+}
+
+body.page-login {
+    background-image:
+        linear-gradient(105deg, rgba(8,8,8,0.92) 45%, rgba(8,8,8,0.55) 100%),
+        url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop');
+}
+
+body.page-register {
+    background-image:
+        linear-gradient(105deg, rgba(8,8,8,0.92) 45%, rgba(8,8,8,0.55) 100%),
+        url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1974&auto=format&fit=crop');
+}
+
+.auth-wrapper {
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100vh; padding: 140px 20px 60px;
+}
+
+.auth-card {
+    width: 100%; max-width: 540px;
+    padding: 56px 50px 50px;
+    background: rgba(14,14,14,0.78);
+    border: 1px solid rgba(200,169,126,0.18);
+    backdrop-filter: blur(14px);
+    position: relative;
+    animation: fadeInUp 0.6s ease-out both;
+}
+
+body.page-login .auth-card { max-width: 440px; }
+
+.auth-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 2px; height: 100%;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+}
+
+.auth-eyebrow {
+    font-family: 'Oswald', sans-serif; font-size: 10px;
+    letter-spacing: 5px; text-transform: uppercase; color: var(--gray-light);
+}
+
+.auth-card h1 {
+    font-family: 'Oswald', sans-serif; font-size: 42px;
+    font-weight: 500; letter-spacing: 4px; margin-top: 8px;
+    text-transform: uppercase;
+}
+
+.auth-card .submit { width: 100%; margin-top: 24px; }
+
+.auth-card .switch-mode {
+    margin-top: 30px; font-size: 13px; color: var(--gray-light);
+}
+
+.auth-card .switch-mode a {
+    color: var(--accent); font-family: 'Oswald', sans-serif;
+    letter-spacing: 3px; text-transform: uppercase; font-size: 11px;
+    border-bottom: 1px solid rgba(200,169,126,0.35);
+    margin-left: 6px;
+}
+
+.auth-card .demo-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    margin-top: 14px;
+}
+
+.auth-card .demo-row .btn { width: 100%; padding: 10px; font-size: 10px; }
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
