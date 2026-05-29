@@ -35,7 +35,7 @@ Implementazione PHP 8 + MySQL 8 + HTML5 + CSS3 del progetto &Stocker, fedele all
 ## 1. Installazione su XAMPP
 
 1. Scarica e installa XAMPP ≥ 8.0 con Apache e MySQL attivi.
-2. Copia l'intera cartella `php-stocker/` in `htdocs`, ad esempio:
+2. Copia l'intera cartella `stocker/` in `htdocs`, ad esempio:
    - Windows: `C:/xampp/htdocs/stocker/`
    - Linux:   `/opt/lampp/htdocs/stocker/`
    - macOS:   `/Applications/XAMPP/htdocs/stocker/`
